@@ -16,3 +16,40 @@
  * Text Domain:       my-youtube-recommendation
  * Domain Path:       /languages/
  */
+
+if (!defined('WPINC')) {
+    wp_die();
+}
+
+if (!defined('MY_YOUTUBE_RECOMMENDATION_VERSION')) {
+    define('MY_YOUTUBE_RECOMMENDATION_VERSION', '1.0.0');
+}
+
+if (!defined('MY_YOUTUBE_RECOMMENDATION_NAME')) {
+    define('MY_YOUTUBE_RECOMMENDATION_NAME', 'My Youtube Recommendation');
+}
+
+if (!defined('MY_YOUTUBE_RECOMMENDATION_PLUGIN_SLUG')) {
+    define('MY_YOUTUBE_RECOMMENDATION_PLUGIN_SLUG', 'my-youtube-recommendation');
+}
+
+if (!defined('MY_YOUTUBE_RECOMMENDATION_BASENAME')) {
+    define('MY_YOUTUBE_RECOMMENDATION_BASENAME', plugin_basename(__FILE__));
+}
+
+if (!defined('MY_YOUTUBE_RECOMMENDATION_PLUGIN_DIR')) {
+    define('MY_YOUTUBE_RECOMMENDATION_PLUGIN_DIR', plugin_dir_path(__FILE__));
+}
+
+if (!defined('MY_YOUTUBE_RECOMMENDATION_JSON_FILENAME')) {
+    define('MY_YOUTUBE_RECOMMENDATION_JSON_FILENAME', 'my-yt-rec.json');
+}
+
+require_once MY_YOUTUBE_RECOMMENDATION_PLUGIN_DIR . 'includes/class-my-yuotube-recommendation.php';
+require_once MY_YOUTUBE_RECOMMENDATION_PLUGIN_DIR . 'includes/class-my-yuotube-recommendation-json.php';
+require_once MY_YOUTUBE_RECOMMENDATION_PLUGIN_DIR . 'includes/class-my-yuotube-recommendation-shortcode.php';
+require_once MY_YOUTUBE_RECOMMENDATION_PLUGIN_DIR . 'includes/class-my-yuotube-recommendation-widget.php';
+
+if (is_admin()) {
+    require_once MY_YOUTUBE_RECOMMENDATION_PLUGIN_DIR . 'includes/class-my-yuotube-recommendation-admin.php';
+}
